@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.movierating.MovieRatingController">
+<TabPane fx:id="tabpane" tabClosingPolicy="UNAVAILABLE">
+  <tabs>
+    <Tab fx:id="TabInsert" text="Indsæt">
+      <content>
+        <AnchorPane minHeight="-Infinity" minWidth="-Infinity">
+               <children>
+                  <Label layoutX="14.0" layoutY="35.0" text="Titel" />
+                  <Label layoutX="14.0" layoutY="67.0" text="Beskrivelse" />
+                  <Label layoutX="19.0" layoutY="299.0" text="Rating" />
+                  <TextField fx:id="txtTitle" layoutX="101.0" layoutY="31.0" prefHeight="25.0" prefWidth="198.0" />
+                  <TextArea fx:id="txtDescription" layoutX="101.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" />
+                  <Slider fx:id="sliRating" blockIncrement="1.0" layoutX="101.0" layoutY="301.0" max="5.0" prefHeight="14.0" prefWidth="199.0" showTickLabels="true" showTickMarks="true" />
+                  <Button fx:id="btnSave" layoutX="410.0" layoutY="287.0" mnemonicParsing="false" onAction="#onBtnSaveClick" text="Gem" />
+               </children>
+               </AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="show" onSelectionChanged="#onTabMoviesClick" text="Vis">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tabMovies" layoutX="153.0" layoutY="72.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onMoviesSelectedClick" prefHeight="273.0" prefWidth="355.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="0.0" />
+                     <Button fx:id="btnUpdate" disable="true" layoutX="373.0" layoutY="293.0" mnemonicParsing="false" onAction="#beforeMovieUpdate" text="Opdater" />
+               </children>
+               </AnchorPane>
+      </content>
+    </Tab>
+     <Tab fx:id="tabUpdate" disable="true" text="Opdater">
+          <content>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity">
+                   <children>
+                      <Label layoutX="14.0" layoutY="35.0" text="Titel" />
+                      <Label layoutX="14.0" layoutY="67.0" text="Beskrivelse" />
+                      <Label layoutX="19.0" layoutY="299.0" text="Rating" />
+                      <TextField fx:id="txtUpdateTitle" layoutX="101.0" layoutY="31.0" prefHeight="25.0" prefWidth="198.0" />
+                      <TextArea fx:id="txtUpdateDescription" layoutX="101.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" />
+                      <Slider fx:id="sliUpdateRating" blockIncrement="1.0" layoutX="101.0" layoutY="301.0" max="5.0" prefHeight="14.0" prefWidth="199.0" showTickLabels="true" showTickMarks="true" />
+                      <Button fx:id="btnSave" layoutX="410.0" layoutY="287.0" mnemonicParsing="false" onAction="#onMovieUpdate" text="Gem" />
+                   </children>
+                   </AnchorPane>
+          </content>
+        </Tab>
+  </tabs>
+</TabPane>
+ </AnchorPane>
